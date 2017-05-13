@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+      PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" 
+	  xmlns:h="http://xmlns.jcp.org/jsf/html" 
+	  xmlns:f="http://xmlns.jcp.org/jsf/core">
+<head>
+	<title>Send Mail Page</title>
+</head>
+    <body>
+        <h:form>
+            <div align="center">
+            <h2>Login: #{mb.username}</h2><br/><br/>
+            <table style="padding-top: 100px">
+                <tr>
+                    <td>
+                        TO:
+                    </td>
+                    <td>
+                        <h:inputText id="receiver" value="#{mb.receiver}" size="60"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        SUBJECT:
+                    </td>
+                    <td>
+                        <h:inputText id="subject" value="#{mb.subject}" size="60"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        MESSAGE:
+                    </td>
+                    <td>
+                        <h:inputTextarea id="message" value="#{mb.message}" cols="60" rows="25"/>
+                    </td>
+                </tr>
+            </table>
+            <h:commandButton id="submit" action="#{mb.sendMail()}" value="Send"/>
+            </div>
+        </h:form>
+    </body>
+</html>
